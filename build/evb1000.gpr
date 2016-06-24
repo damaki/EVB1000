@@ -1,0 +1,8 @@
+project Evb1000
+is
+   for Source_Dirs      use ("adainclude");
+   for Library_Dir      use "adalib";
+   for Library_Kind     use "static";
+   for Library_Name     use "evb1000";
+   for Externally_Built use "true";
+end Evb1000;
