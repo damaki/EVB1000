@@ -34,7 +34,9 @@ is
 
    begin
       IDR   := STM32.GPIO.GPIOC_Periph.IDR.IDR;
-      State := Bit (IDR.Arr (Integer (Switch - 3)));
+
+      --  The switch is 'on' when the pin is low.
+      State := not Bit (IDR.Arr (Integer (Switch - 3)));
    end Read_Switch;
 
    procedure Read_All(Switches : out Switch_Bit_Array)
@@ -43,12 +45,14 @@ is
 
    begin
       IDR := STM32.GPIO.GPIOC_Periph.IDR.IDR;
-      Switches := (3 => Bit (IDR.Arr (0)),
-                   4 => Bit (IDR.Arr (1)),
-                   5 => Bit (IDR.Arr (2)),
-                   6 => Bit (IDR.Arr (3)),
-                   7 => Bit (IDR.Arr (4)),
-                   8 => Bit (IDR.Arr (5)));
+
+      --  The switch is 'on' when the pin is low.
+      Switches := (3 => not Bit (IDR.Arr (0)),
+                   4 => not Bit (IDR.Arr (1)),
+                   5 => not Bit (IDR.Arr (2)),
+                   6 => not Bit (IDR.Arr (3)),
+                   7 => not Bit (IDR.Arr (4)),
+                   8 => not Bit (IDR.Arr (5)));
    end Read_All;
 
 

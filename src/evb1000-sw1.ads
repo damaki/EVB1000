@@ -47,7 +47,7 @@ is
      Depends => (State => (Switch_State, Switch));
    --  Read the current state of a switch.
    --
-   --  The state of the switch is 1 if the pin is 'on', otherwise it is 0 if
+   --  The state of the switch is 1 if the switch is 'on', otherwise it is 0 if
    --  the switch is 'off'.
 
    procedure Read_All(Switches : out Switch_Bit_Array)
@@ -55,7 +55,7 @@ is
      Depends => (Switches => Switch_State);
    --  Read the current state of all 6 switches.
    --
-   --  The state of each switch is 1 if the pin is 'on', otherwise it is 0 if
+   --  The state of each switch is 1 if the switch is 'on', otherwise it is 0 if
    --  the switch is 'off'.
 
 end EVB1000.SW1;
