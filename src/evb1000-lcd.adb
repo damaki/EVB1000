@@ -93,11 +93,16 @@ is
       Select_LCD;
 
       for I in Data'Range loop
-         STM32.SPI.SPI2_Periph.DR.DR := Unsigned_16 (Character'Pos (Data (I)));
-
          loop
-            exit when STM32.SPI.SPI2_Periph.SR.BSY = 0;
+            exit when STM32.SPI.SPI2_Periph.SR.TXE = 1;
          end loop;
+
+         STM32.SPI.SPI2_Periph.DR.DR := Unsigned_16 (Character'Pos (Data (I)));
+      end loop;
+
+      --  Wait for last byte to finish transmitting
+      loop
+         exit when STM32.SPI.SPI2_Periph.SR.BSY = 0;
       end loop;
 
       Deselect_LCD;
@@ -162,60 +167,53 @@ begin
    STM32.RCC.RCC_Periph.APB1ENR.SPI2EN := 1;
 
    -- Configure GPIO pins
-   declare
-      CRH : STM32.GPIO.CRH_Register;
-   begin
-      CRH := STM32.GPIO.GPIOB_Periph.CRH;
-      CRH.MODE10 := 2#11#;
-      CRH.MODE11 := 2#11#;
-      CRH.MODE12 := 2#11#;
-      CRH.MODE13 := 2#11#;
-      CRH.MODE14 := 2#00#;
-      CRH.MODE15 := 2#11#;
-      CRH.CNF10  := 2#00#;
-      CRH.CNF11  := 2#00#;
-      CRH.CNF12  := 2#00#;
-      CRH.CNF13  := 2#10#;
-      CRH.CNF14  := 2#10#;
-      CRH.CNF15  := 2#10#;
-      STM32.GPIO.GPIOB_Periph.CRH := CRH;
-   end;
+   STM32.GPIO.GPIOB_Periph.CRH.MODE10 := 2#11#;
+   STM32.GPIO.GPIOB_Periph.CRH.MODE11 := 2#11#;
+   STM32.GPIO.GPIOB_Periph.CRH.MODE12 := 2#11#;
+   STM32.GPIO.GPIOB_Periph.CRH.MODE13 := 2#11#;
+   STM32.GPIO.GPIOB_Periph.CRH.MODE14 := 2#00#;
+   STM32.GPIO.GPIOB_Periph.CRH.MODE15 := 2#11#;
+   STM32.GPIO.GPIOB_Periph.CRH.CNF10  := 2#00#;
+   STM32.GPIO.GPIOB_Periph.CRH.CNF11  := 2#00#;
+   STM32.GPIO.GPIOB_Periph.CRH.CNF12  := 2#00#;
+   STM32.GPIO.GPIOB_Periph.CRH.CNF13  := 2#10#;
+   STM32.GPIO.GPIOB_Periph.CRH.CNF14  := 2#10#;
+   STM32.GPIO.GPIOB_Periph.CRH.CNF15  := 2#10#;
 
    -- Deselect LCD
    STM32.GPIO.GPIOB_Periph.BSRR.BS :=
-     STM32.GPIO.BSRR_BS_Field'(As_Array => True,
-                               Arr      => (CS_Pin   => 1, --  Deselect LCD
-                                            MISO_Pin => 1, --  Enable pull-up
-                                            others   => 0));
+     (As_Array => True,
+      Arr      => (CS_Pin   => 1, --  Deselect LCD
+                   MISO_Pin => 1, --  Enable pull-up
+                   others   => 0));
 
    -- Clear LCD RS + RW lines
    STM32.GPIO.GPIOB_Periph.BSRR.BR :=
-     STM32.GPIO.BSRR_BR_Field'(As_Array => True,
-                               Arr      => (RW_Pin => 1,
-                                            RS_Pin => 1,
-                                            others => 0));
+     (As_Array => True,
+      Arr      => (RW_Pin => 1,
+                   RS_Pin => 1,
+                   others => 0));
 
    -- Reset SPI
    STM32.RCC.RCC_Periph.APB1RSTR.SPI2RST := 1;
    STM32.RCC.RCC_Periph.APB1RSTR.SPI2RST := 0;
 
    -- Configure SPI
-   STM32.SPI.SPI2_Periph.CR1 :=
-     STM32.SPI.CR1_Register'(CPHA           => 1,
-                             CPOL           => 1,
-                             MSTR           => 1,
-                             BR             => 2#110#, --  /128 prescaler
-                             SPE            => 0,
-                             LSBFIRST       => 0, --  MSB first
-                             SSI            => 1,
-                             SSM            => 1,
-                             RXONLY         => 0, --  Full duplex
-                             DFF            => 0, --  8-bit data
-                             CRCNEXT        => 0,
-                             CRCEN          => 0, --  No CRC
-                             BIDIOE         => 0,
-                             BIDIMODE       => 0, --  Bidirectional
-                             Reserved_16_31 => 0);
+   STM32.SPI.SPI2_Periph.CR1 := (CPHA           => 1,
+                                 CPOL           => 1,
+                                 MSTR           => 1,
+                                 BR             => 2#110#, --  /128 prescaler
+                                 SPE            => 0,
+                                 LSBFIRST       => 0, --  MSB first
+                                 SSI            => 1,
+                                 SSM            => 1,
+                                 RXONLY         => 0, --  Full duplex
+                                 DFF            => 0, --  8-bit data
+                                 CRCNEXT        => 0,
+                                 CRCEN          => 0, --  No CRC
+                                 BIDIOE         => 0,
+                                 BIDIMODE       => 0, --  Bidirectional
+                                 Reserved_16_31 => 0);
    STM32.SPI.SPI2_Periph.CRCPR.CRCPOLY := 7;
    STM32.SPI.SPI2_Periph.CR1.SPE := 1;
 
