@@ -87,7 +87,7 @@ is
 
       if (not RS) and ((First_Byte and 3) /= 0) then
          -- If the command = 1 or 2 then the execution time is > 1 ms
-         Delay_Time := Ada.Real_Time.Milliseconds(1);
+         Delay_Time := Ada.Real_Time.Milliseconds(2);
       end if;
 
       Select_LCD;
@@ -105,9 +105,9 @@ is
          exit when STM32.SPI.SPI2_Periph.SR.BSY = 0;
       end loop;
 
-      Deselect_LCD;
-
       Set_RS (0);
+
+      Deselect_LCD;
 
       if Delay_Time > Ada.Real_Time.Time_Span_Zero then
          Delay_End := Ada.Real_Time.Clock + Delay_Time;
@@ -124,7 +124,7 @@ is
    --  Send the command to the LCD to reset the cursor back to the origin.
    procedure Cursor_Home
    is
-      Command : constant String(1 .. 1) := (others => Character'Val (1));
+      Command : constant String(1 .. 1) := (others => Character'Val (2));
 
    begin
       Send_To_LCD (RS   => False,
@@ -136,7 +136,7 @@ is
 
       procedure Clear_LCD
       is
-         Command : constant String(1 .. 1) := (others => Character'Val (2));
+         Command : constant String(1 .. 1) := (others => Character'Val (1));
 
       begin
          Send_To_LCD (RS   => False,
@@ -146,16 +146,16 @@ is
       procedure Put(Text_1 : in String;
                     Text_2 : in String)
       is
-         Data : String (1 .. 57) := (others => ' ');
+         Data : String (1 .. 80) := (others => ' ');
+
       begin
+         Clear_LCD;
+         Cursor_Home;
+
          Data (1 .. Text_1'Length)       := Text_1;
          Data (41 .. 40 + Text_2'Length) := Text_2;
-
-         Cursor_Home;
-         Clear_LCD;
-
-         Send_To_LCD(RS   => True,
-                     Data => Data);
+         Send_To_LCD (RS   => True,
+                      Data => Data);
       end Put;
 
    end Driver_Type;
@@ -244,6 +244,7 @@ begin
 
       -- Leave some more time for the init sequence to finish.
       Now := Ada.Real_Time.Clock;
-      delay until Now + Ada.Real_Time.Milliseconds(1);
+      delay until Now + Ada.Real_Time.Milliseconds(2);
    end;
+
 end EVB1000.LCD;
