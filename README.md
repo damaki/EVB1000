@@ -26,6 +26,9 @@ To install the Ada library to the directory `<destination>` change to the
 repository root directory and type:
 ``make install DESTDIR=<destination>``
 
+Alternatively, you can copy/include the source code directly into your project
+by including all of the source files in the `src` directory.
+
 # License
 
 This library is licensed under the MIT license.
