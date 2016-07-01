@@ -20,14 +20,14 @@
 -- IN THE SOFTWARE.
 -------------------------------------------------------------------------------
 
---  Provides an API for reading the state of the SW1 switches on the
+--  Provides an API for reading the state of the S1 switches on the
 --  EVB1000 board.
 --
---  On SW1 there are 8 individual switches that can be toggled on or off.
+--  On S1 there are 8 individual switches that can be toggled on or off.
 --  Out of these switches, only switches 3 .. 8 are available to the
 --  STM32F105 host processor, as switches 1 and 2 are used to set the BOOT0
 --  and BOOT1 pins.
-package EVB1000.SW1
+package EVB1000.S1
 with SPARK_Mode => On,
   Abstract_State => (Switch_State with External),
   Initializes => Switch_State
@@ -36,7 +36,7 @@ is
    type Bit is mod 2 with Size => 1;
 
    type Switch_Number is range 3 .. 8;
-   -- Only switches 3 .. 8 are available on SW1 to the host processor.
+   -- Only switches 3 .. 8 are available on S1 to the host processor.
    -- Switches 1 and 2 determine the BOOT pins' setting.
 
    type Switch_Bit_Array is array (Switch_Number) of Bit;
@@ -58,4 +58,4 @@ is
    --  The state of each switch is 1 if the switch is 'on', otherwise it is 0 if
    --  the switch is 'off'.
 
-end EVB1000.SW1;
+end EVB1000.S1;

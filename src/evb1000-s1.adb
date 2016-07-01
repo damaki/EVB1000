@@ -23,7 +23,7 @@
 with STM32.GPIO;
 with STM32.RCC;
 
-package body EVB1000.SW1
+package body EVB1000.S1
 with SPARK_Mode => Off
 is
 
@@ -74,4 +74,4 @@ begin
    STM32.GPIO.GPIOC_Periph.CRL.CNF4  := 2#01#;
    STM32.GPIO.GPIOC_Periph.CRL.CNF5  := 2#01#;
 
-end EVB1000.SW1;
+end EVB1000.S1;
