@@ -6,7 +6,7 @@ the package specs have SPARK annotations to allow the drivers to be used by
 SPARK code. The library provides drivers for:
   * the two-line ASCII LCD;
   * the four user-controllable LEDs;
-  * switches 3 .. 8 on the SW1 switch.
+  * switches 3 .. 8 on the S1 switch.
 
 The LCD driver uses a protected object to manage shared access between multiple
 user tasks. Therefore, this library requires an Ada runtime which supports
