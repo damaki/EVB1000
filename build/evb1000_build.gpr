@@ -13,7 +13,7 @@ project Evb1000_Build is
    end Ide;
 
    package Builder is
-      for Default_Switches ("ada") use ("-mcpu=cortex-m3", "-mlittle-endian", "-mthumb", "--RTS=ravenscar-sfp-stm32f105");
+      for Default_Switches ("ada") use ("-mcpu=cortex-m3", "-mlittle-endian", "-mthumb");
    end Builder;
 
    package Compiler is

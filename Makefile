@@ -1,4 +1,5 @@
 DESTDIR ?= /usr/local
+RTS ?= ravenscar-full-stm32f105
 
 all: build
 
@@ -7,7 +8,7 @@ build: adalib/libevb1000.a
 .PHONY: adalib/libevb1000.a
 adalib/libevb1000.a:
 	mkdir -p obj adalib
-	arm-eabi-gnatmake -Pbuild/evb1000_build.gpr
+	arm-eabi-gnatmake -Pbuild/evb1000_build.gpr --RTS=$(RTS)
 
 clean:
 	gprclean -Pbuild/evb1000_build.gpr
