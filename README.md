@@ -24,7 +24,7 @@ To build the library, change to the repository root directory and type:
 ``make build``
 
 You can optionally specify a different runtime system (RTS) to use (the default
-is ``ravenscar-full-stm32f105``:
+is ``ravenscar-full-stm32f105``):
 
 ``make build RTS=ravenscar-sfp-stm32f105``
 
