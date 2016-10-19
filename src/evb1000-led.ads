@@ -39,11 +39,15 @@ is
 
    procedure Set_LED(LED : in LED_Number;
                      On  : in Boolean)
-     with Global => (Output => LEDs_State),
-     Depends => (LEDs_State => (LED, On));
+     with Global => (In_Out => LEDs_State),
+     Depends => (LEDs_State => + (LED, On));
 
    procedure Set_LEDs(LEDs : in LED_Array)
      with Global => (Output => LEDs_State),
      Depends => (LEDs_State => LEDs);
+
+   procedure Toggle_LED (LED : in LED_Number)
+     with Global => (In_Out => LEDs_State),
+     Depends => (LEDs_State => + LED);
 
 end EVB1000.LED;

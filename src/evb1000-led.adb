@@ -75,6 +75,28 @@ is
                         others => 0));
    end Set_LEDs;
 
+   procedure Toggle_LED (LED : in LED_Number)
+   is
+      use type STM32.Bit;
+
+   begin
+      case LED is
+         when 1 =>
+            STM32.GPIO.GPIOC_Periph.BSRR.BR.Arr (8) :=     STM32.GPIO.GPIOC_Periph.ODR.ODR.Arr (8);
+            STM32.GPIO.GPIOC_Periph.BSRR.BS.Arr (8) := not STM32.GPIO.GPIOC_Periph.ODR.ODR.Arr (8);
+         when 2 =>
+            STM32.GPIO.GPIOC_Periph.BSRR.BR.Arr (6) :=     STM32.GPIO.GPIOC_Periph.ODR.ODR.Arr (6);
+            STM32.GPIO.GPIOC_Periph.BSRR.BS.Arr (6) := not STM32.GPIO.GPIOC_Periph.ODR.ODR.Arr (6);
+         when 3 =>
+            STM32.GPIO.GPIOC_Periph.BSRR.BR.Arr (9) :=     STM32.GPIO.GPIOC_Periph.ODR.ODR.Arr (9);
+            STM32.GPIO.GPIOC_Periph.BSRR.BS.Arr (9) := not STM32.GPIO.GPIOC_Periph.ODR.ODR.Arr (9);
+         when 4 =>
+            STM32.GPIO.GPIOC_Periph.BSRR.BR.Arr (7) :=     STM32.GPIO.GPIOC_Periph.ODR.ODR.Arr (7);
+            STM32.GPIO.GPIOC_Periph.BSRR.BS.Arr (7) := not STM32.GPIO.GPIOC_Periph.ODR.ODR.Arr (7);
+      end case;
+   end Toggle_LED;
+
+
 begin
    --  Enable peripheral clock
    STM32.RCC.RCC_Periph.APB2ENR.IOPCEN := 1;
