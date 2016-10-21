@@ -32,67 +32,91 @@ is
    is
    begin
       if On Then
-         STM32.GPIO.GPIOC_Periph.BSRR.BS :=
-           STM32.GPIO.BSRR_BS_Field'
-             (As_Array => True,
-              Arr      => (6      => (if LED = 2 then 1 else 0),
-                           7      => (if LED = 4 then 1 else 0),
-                           8      => (if LED = 1 then 1 else 0),
-                           9      => (if LED = 3 then 1 else 0),
-                           others => 0));
+         STM32.GPIO.GPIOC_Periph.BSRR :=
+           (BS => (As_Array => True,
+                   Arr      => (6      => (if LED = 2 then 1 else 0),
+                                7      => (if LED = 4 then 1 else 0),
+                                8      => (if LED = 1 then 1 else 0),
+                                9      => (if LED = 3 then 1 else 0),
+                                others => 0)),
+            BR => (As_Array => False,
+                   Val      => 0));
 
       else
-         STM32.GPIO.GPIOC_Periph.BSRR.BR :=
-           STM32.GPIO.BSRR_BR_Field'
-             (As_Array => True,
-              Arr      => (6      => (if LED = 2 then 1 else 0),
-                           7      => (if LED = 4 then 1 else 0),
-                           8      => (if LED = 1 then 1 else 0),
-                           9      => (if LED = 3 then 1 else 0),
-                           others => 0));
+         STM32.GPIO.GPIOC_Periph.BSRR :=
+           (BS => (As_Array => False,
+                   Val      => 0),
+            BR => (As_Array => True,
+                   Arr      => (6      => (if LED = 2 then 1 else 0),
+                                7      => (if LED = 4 then 1 else 0),
+                                8      => (if LED = 1 then 1 else 0),
+                                9      => (if LED = 3 then 1 else 0),
+                                others => 0)));
       end if;
    end Set_LED;
 
    procedure Set_LEDs(LEDs : in LED_Array)
    is
    begin
-      STM32.GPIO.GPIOC_Periph.BSRR.BS :=
-        STM32.GPIO.BSRR_BS_Field'
-          (As_Array => True,
-           Arr      => (6      => (if LEDs (2) then 1 else 0),
-                        7      => (if LEDs (4) then 1 else 0),
-                        8      => (if LEDs (1) then 1 else 0),
-                        9      => (if LEDs (3) then 1 else 0),
-                        others => 0));
-
-      STM32.GPIO.GPIOC_Periph.BSRR.BR :=
-        STM32.GPIO.BSRR_BR_Field'
-          (As_Array => True,
-           Arr      => (6      => (if not LEDs (2) then 1 else 0),
-                        7      => (if not LEDs (4) then 1 else 0),
-                        8      => (if not LEDs (1) then 1 else 0),
-                        9      => (if not LEDs (3) then 1 else 0),
-                        others => 0));
+      STM32.GPIO.GPIOC_Periph.BSRR :=
+        (BS => (As_Array => True,
+                Arr      => (6      => (if LEDs (2) then 1 else 0),
+                             7      => (if LEDs (4) then 1 else 0),
+                             8      => (if LEDs (1) then 1 else 0),
+                             9      => (if LEDs (3) then 1 else 0),
+                             others => 0)),
+         BR => (As_Array => True,
+                Arr      => (6      => (if LEDs (2) then 0 else 1),
+                             7      => (if LEDs (4) then 0 else 1),
+                             8      => (if LEDs (1) then 0 else 1),
+                             9      => (if LEDs (3) then 0 else 1),
+                             others => 0)));
    end Set_LEDs;
 
    procedure Toggle_LED (LED : in LED_Number)
    is
       use type STM32.Bit;
 
+      ODR : constant STM32.GPIO.ODR_Field := STM32.GPIO.GPIOC_Periph.ODR.ODR;
+
    begin
       case LED is
          when 1 =>
-            STM32.GPIO.GPIOC_Periph.BSRR.BR.Arr (8) :=     STM32.GPIO.GPIOC_Periph.ODR.ODR.Arr (8);
-            STM32.GPIO.GPIOC_Periph.BSRR.BS.Arr (8) := not STM32.GPIO.GPIOC_Periph.ODR.ODR.Arr (8);
+            STM32.GPIO.GPIOC_Periph.BSRR :=
+              STM32.GPIO.BSRR_Register'
+                (BS => (As_Array => True,
+                        Arr      => (8      => ODR.Arr (8),
+                                     others => 0)),
+                 BR => (As_Array => True,
+                        Arr      => (8      => not ODR.Arr (8),
+                                     others => 0)));
          when 2 =>
-            STM32.GPIO.GPIOC_Periph.BSRR.BR.Arr (6) :=     STM32.GPIO.GPIOC_Periph.ODR.ODR.Arr (6);
-            STM32.GPIO.GPIOC_Periph.BSRR.BS.Arr (6) := not STM32.GPIO.GPIOC_Periph.ODR.ODR.Arr (6);
+            STM32.GPIO.GPIOC_Periph.BSRR :=
+              STM32.GPIO.BSRR_Register'
+                (BS => (As_Array => True,
+                        Arr      => (6      => ODR.Arr (6),
+                                     others => 0)),
+                 BR => (As_Array => True,
+                        Arr      => (6      => not ODR.Arr (6),
+                                     others => 0)));
          when 3 =>
-            STM32.GPIO.GPIOC_Periph.BSRR.BR.Arr (9) :=     STM32.GPIO.GPIOC_Periph.ODR.ODR.Arr (9);
-            STM32.GPIO.GPIOC_Periph.BSRR.BS.Arr (9) := not STM32.GPIO.GPIOC_Periph.ODR.ODR.Arr (9);
+            STM32.GPIO.GPIOC_Periph.BSRR :=
+              STM32.GPIO.BSRR_Register'
+                (BS => (As_Array => True,
+                        Arr      => (9      => ODR.Arr (9),
+                                     others => 0)),
+                 BR => (As_Array => True,
+                        Arr      => (9      => not ODR.Arr (9),
+                                     others => 0)));
          when 4 =>
-            STM32.GPIO.GPIOC_Periph.BSRR.BR.Arr (7) :=     STM32.GPIO.GPIOC_Periph.ODR.ODR.Arr (7);
-            STM32.GPIO.GPIOC_Periph.BSRR.BS.Arr (7) := not STM32.GPIO.GPIOC_Periph.ODR.ODR.Arr (7);
+            STM32.GPIO.GPIOC_Periph.BSRR :=
+              STM32.GPIO.BSRR_Register'
+                (BS => (As_Array => True,
+                        Arr      => (7      => ODR.Arr (7),
+                                     others => 0)),
+                 BR => (As_Array => True,
+                        Arr      => (7      => not ODR.Arr (7),
+                                     others => 0)));
       end case;
    end Toggle_LED;
 
