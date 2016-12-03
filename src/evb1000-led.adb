@@ -20,57 +20,99 @@
 -- IN THE SOFTWARE.
 -------------------------------------------------------------------------------
 
+with Interfaces; use Interfaces;
 with STM32.GPIO;
 with STM32.RCC;
 
 package body EVB1000.LED
   with SPARK_Mode => Off
 is
+   LED_Pin_Mapping : constant array (LED_Number) of Natural :=
+     (1 => 8,
+      2 => 6,
+      3 => 9,
+      4 => 7);
+
+   LED_On_Table : constant array (LED_Number, Boolean) of Unsigned_16
+     := (1 => (True  => 16#0100#,
+               False => 0),
+         2 => (True  => 16#0040#,
+               False => 0),
+         3 => (True  => 16#0200#,
+               False => 0),
+         4 => (True  => 16#0080#,
+               False => 0));
+
+   LED_Off_Table : constant array (LED_Number, Boolean) of Unsigned_16
+     := (1 => (True  => 0,
+               False => 16#0100#),
+         2 => (True  => 0,
+               False => 16#0040#),
+         3 => (True  => 0,
+               False => 16#0200#),
+         4 => (True  => 0,
+               False => 16#0080#));
+
+   LED_BSRR_Table : constant
+     array (LED_Number, Boolean)
+     of STM32.GPIO.BSRR_Register :=
+       (1 => (True  => (BS => (As_Array => False,
+                               Val      => 16#0100#),
+                        BR => (As_Array => False,
+                               Val      => 0)),
+              False => (BS => (As_Array => False,
+                               Val      => 0),
+                        BR => (As_Array => False,
+                               Val      => 16#0100#))),
+
+        2 => (True  => (BS => (As_Array => False,
+                               Val      => 16#0040#),
+                        BR => (As_Array => False,
+                               Val      => 0)),
+              False => (BS => (As_Array => False,
+                               Val      => 0),
+                        BR => (As_Array => False,
+                               Val      => 16#0040#))),
+
+        3 => (True  => (BS => (As_Array => False,
+                               Val      => 16#0200#),
+                        BR => (As_Array => False,
+                               Val      => 0)),
+              False => (BS => (As_Array => False,
+                               Val      => 0),
+                        BR => (As_Array => False,
+                               Val      => 16#0200#))),
+
+        4 => (True  => (BS => (As_Array => False,
+                               Val      => 16#0080#),
+                        BR => (As_Array => False,
+                               Val      => 0)),
+              False => (BS => (As_Array => False,
+                               Val      => 0),
+                        BR => (As_Array => False,
+                               Val      => 16#0080#))));
 
    procedure Set_LED(LED : in LED_Number;
                      On  : in Boolean)
    is
    begin
-      if On Then
-         STM32.GPIO.GPIOC_Periph.BSRR :=
-           (BS => (As_Array => True,
-                   Arr      => (6      => (if LED = 2 then 1 else 0),
-                                7      => (if LED = 4 then 1 else 0),
-                                8      => (if LED = 1 then 1 else 0),
-                                9      => (if LED = 3 then 1 else 0),
-                                others => 0)),
-            BR => (As_Array => False,
-                   Val      => 0));
-
-      else
-         STM32.GPIO.GPIOC_Periph.BSRR :=
-           (BS => (As_Array => False,
-                   Val      => 0),
-            BR => (As_Array => True,
-                   Arr      => (6      => (if LED = 2 then 1 else 0),
-                                7      => (if LED = 4 then 1 else 0),
-                                8      => (if LED = 1 then 1 else 0),
-                                9      => (if LED = 3 then 1 else 0),
-                                others => 0)));
-      end if;
+      STM32.GPIO.GPIOC_Periph.BSRR := LED_BSRR_Table (LED, On);
    end Set_LED;
 
    procedure Set_LEDs(LEDs : in LED_Array)
    is
    begin
       STM32.GPIO.GPIOC_Periph.BSRR :=
-        (BS => (As_Array => True,
-                Arr      => (6      => (if LEDs (2) then 1 else 0),
-                             7      => (if LEDs (4) then 1 else 0),
-                             8      => (if LEDs (1) then 1 else 0),
-                             9      => (if LEDs (3) then 1 else 0),
-                             others => 0)),
-         BR => (As_Array => True,
-                Arr      => (6      => (if LEDs (2) then 0 else 1),
-                             7      => (if LEDs (4) then 0 else 1),
-                             8      => (if LEDs (1) then 0 else 1),
-                             9      => (if LEDs (3) then 0 else 1),
-                             others => 0)));
+        (BS => (As_Array => False,
+                Val      => (LED_On_Table (1, LEDs (1))
+                             or LED_On_Table (2, LEDs (2))
+                             or LED_On_Table (3, LEDs (3))
+                             or LED_On_Table (4, LEDs (4)))),
+         BR => (As_Array => False,
+                Val      => (LED_Off_Table (1, LEDs (1))
+                             or LED_Off_Table (2, LEDs (2))
+                             or LED_Off_Table (3, LEDs (3))
+                             or LED_Off_Table (4, LEDs (4)))));
    end Set_LEDs;
 
    procedure Toggle_LED (LED : in LED_Number)
@@ -80,44 +122,8 @@ is
       ODR : constant STM32.GPIO.ODR_Field := STM32.GPIO.GPIOC_Periph.ODR.ODR;
 
    begin
-      case LED is
-         when 1 =>
-            STM32.GPIO.GPIOC_Periph.BSRR :=
-              STM32.GPIO.BSRR_Register'
-                (BS => (As_Array => True,
-                        Arr      => (8      => ODR.Arr (8),
-                                     others => 0)),
-                 BR => (As_Array => True,
-                        Arr      => (8      => not ODR.Arr (8),
-                                     others => 0)));
-         when 2 =>
-            STM32.GPIO.GPIOC_Periph.BSRR :=
-              STM32.GPIO.BSRR_Register'
-                (BS => (As_Array => True,
-                        Arr      => (6      => ODR.Arr (6),
-                                     others => 0)),
-                 BR => (As_Array => True,
-                        Arr      => (6      => not ODR.Arr (6),
-                                     others => 0)));
-         when 3 =>
-            STM32.GPIO.GPIOC_Periph.BSRR :=
-              STM32.GPIO.BSRR_Register'
-                (BS => (As_Array => True,
-                        Arr      => (9      => ODR.Arr (9),
-                                     others => 0)),
-                 BR => (As_Array => True,
-                        Arr      => (9      => not ODR.Arr (9),
-                                     others => 0)));
-         when 4 =>
-            STM32.GPIO.GPIOC_Periph.BSRR :=
-              STM32.GPIO.BSRR_Register'
-                (BS => (As_Array => True,
-                        Arr      => (7      => ODR.Arr (7),
-                                     others => 0)),
-                 BR => (As_Array => True,
-                        Arr      => (7      => not ODR.Arr (7),
-                                     others => 0)));
-      end case;
+      STM32.GPIO.GPIOC_Periph.BSRR := LED_BSRR_Table
+        (LED, ODR.Arr (LED_Pin_Mapping (LED)) = 0);
    end Toggle_LED;
 
 
