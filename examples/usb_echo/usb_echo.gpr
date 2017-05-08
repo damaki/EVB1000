@@ -1,21 +1,21 @@
-project Evb1000_Build is
+project Usb_Echo is
 
-   for Source_Dirs use ("../src", "../usb/**");
-   for Object_Dir use "../obj";
-   for Library_Name use "evb1000";
-   for Library_Dir use "../adalib";
-   for Library_Ali_Dir use "../adalib";
    for Languages use ("Ada", "C");
+   for Source_Dirs use (".", "../../src", "../../usb/**");
+   for Object_Dir use "obj";
+   for Exec_Dir use "bin";
+
+   package Builder is
+      for Default_Switches ("ada") use ("--RTS=ravenscar-full-evb1000", "-mcpu=cortex-m3", "-mlittle-endian", "-mthumb", "-j0", "-g");
+   end Builder;
 
    package Ide is
       for Gnat use "arm-eabi-gnat";
       for Gnatlist use "arm-eabi-gnatls";
       for Debugger_Command use "arm-eabi-gdb";
+      for Program_Host use "localhost:4242";
+      for Communication_Protocol use "extended-remote";
    end Ide;
-
-   package Builder is
-      for Default_Switches ("ada") use ("-mcpu=cortex-m3", "-mlittle-endian", "-mthumb", "-j0", "-m32");
-   end Builder;
 
    package Compiler is
       for Default_Switches ("ada") use ("-gnatp", "-gnatn", "-ffunction-sections", "-fdata-sections", "-fcallgraph-info=su,da", "-g", "-O2");
@@ -23,9 +23,11 @@ project Evb1000_Build is
          "-DVBUS_SENSING_ENABLED");
    end Compiler;
 
+   for Main use ("usb_echo.adb");
+
    package Linker is
-      for Linker_Options use ();
+      for Default_Switches ("ada") use ("-g");
    end Linker;
 
-end Evb1000_Build;
+end Usb_Echo;
 

@@ -1,2 +1,4 @@
 /adalib
 /obj
+examples/usb_echo/bin
+examples/usb_echo/obj

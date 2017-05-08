@@ -1,0 +1,394 @@
+<?xml version="1.0"?>
+<Locations >
+  <Project>
+    <vfs_file />
+    <file_marker column=" 16" line=" 2368" >
+      <vfs_project />
+      <vfs_file>/home/dan/Downloads/gcc-3abfdf50c7d9a9bde74bb6753ab605f5cf48cad3/gcc/ada/sem_warn.adb</vfs_file>
+    </file_marker>
+    <file_marker column=" 28" line=" 483" >
+      <vfs_project />
+      <vfs_file>/home/dan/Downloads/gcc-3abfdf50c7d9a9bde74bb6753ab605f5cf48cad3/gcc/ada/rtsfind.adb</vfs_file>
+    </file_marker>
+    <file_marker column=" 30" line=" 415" >
+      <vfs_project />
+      <vfs_file>/home/dan/Downloads/gcc-3abfdf50c7d9a9bde74bb6753ab605f5cf48cad3/gcc/ada/opt.ads</vfs_file>
+    </file_marker>
+    <file_marker column=" 4" line=" 141" >
+      <vfs_project />
+      <vfs_file>/home/dan/Downloads/gcc-3abfdf50c7d9a9bde74bb6753ab605f5cf48cad3/gcc/ada/system-rtems.ads</vfs_file>
+    </file_marker>
+    <file_marker column=" 21" line=" 594" >
+      <vfs_project />
+      <vfs_file>/home/dan/Downloads/gcc-3abfdf50c7d9a9bde74bb6753ab605f5cf48cad3/gcc/ada/gnat1drv.adb</vfs_file>
+    </file_marker>
+    <file_marker column=" 59" line=" 125" >
+      <vfs_project />
+      <vfs_file>/home/dan/Downloads/gcc-3abfdf50c7d9a9bde74bb6753ab605f5cf48cad3/gcc/ada/targparm.ads</vfs_file>
+    </file_marker>
+    <file_marker column=" 43" line=" 117" >
+      <vfs_project />
+      <vfs_file>/home/dan/Downloads/gcc-3abfdf50c7d9a9bde74bb6753ab605f5cf48cad3/gcc/ada/s-rident.ads</vfs_file>
+    </file_marker>
+    <file_marker column=" 1" line=" 1" >
+      <vfs_project />
+      <vfs_file>/usr/gnat/lib/gcc/x86_64-pc-linux-gnu/4.9.4/rts-native/adainclude/a-interr.ads</vfs_file>
+    </file_marker>
+    <file_marker column=" 47" line=" 42" >
+      <vfs_project />
+      <vfs_file>/usr/gnat/lib/gcc/x86_64-pc-linux-gnu/4.9.4/rts-native/adainclude/a-interr.ads</vfs_file>
+    </file_marker>
+    <file_marker column=" 9" line=" 64" >
+      <vfs_project />
+      <vfs_file>/usr/gnat/lib/gcc/x86_64-pc-linux-gnu/4.9.4/rts-native/adainclude/s-interr.ads</vfs_file>
+    </file_marker>
+    <file_marker column=" 1" line=" 74" >
+      <vfs_project />
+      <vfs_file>/usr/gnat/lib/gcc/x86_64-pc-linux-gnu/4.9.4/rts-native/adainclude/s-interr.ads</vfs_file>
+    </file_marker>
+    <file_marker column=" 54" line=" 191" >
+      <vfs_project />
+      <vfs_file>/usr/gnat/lib/gcc/x86_64-pc-linux-gnu/4.9.4/rts-native/adainclude/s-interr.ads</vfs_file>
+    </file_marker>
+    <file_marker column=" 30" line=" 212" >
+      <vfs_project />
+      <vfs_file>/usr/gnat/lib/gcc/x86_64-pc-linux-gnu/4.9.4/rts-native/adainclude/s-interr.ads</vfs_file>
+    </file_marker>
+    <file_marker column=" 71" line=" 220" >
+      <vfs_project />
+      <vfs_file>/usr/gnat/lib/gcc/x86_64-pc-linux-gnu/4.9.4/rts-native/adainclude/s-interr.ads</vfs_file>
+    </file_marker>
+    <file_marker column=" 25" line=" 222" >
+      <vfs_project />
+      <vfs_file>/usr/gnat/lib/gcc/x86_64-pc-linux-gnu/4.9.4/rts-native/adainclude/s-interr.ads</vfs_file>
+    </file_marker>
+    <file_marker column=" 72" line=" 229" >
+      <vfs_project />
+      <vfs_file>/usr/gnat/lib/gcc/x86_64-pc-linux-gnu/4.9.4/rts-native/adainclude/s-interr.ads</vfs_file>
+    </file_marker>
+    <file_marker column=" 1" line=" 1" >
+      <vfs_project />
+      <vfs_file>/usr/gnat/lib/gcc/x86_64-pc-linux-gnu/4.9.4/rts-native/adainclude/a-intnam.ads</vfs_file>
+    </file_marker>
+    <file_marker column=" 13" line=" 59" >
+      <vfs_project />
+      <vfs_file>/usr/gnat/lib/gcc/x86_64-pc-linux-gnu/4.9.4/rts-native/adainclude/a-intnam.ads</vfs_file>
+    </file_marker>
+    <file_marker column=" 1" line=" 1" >
+      <vfs_project />
+      <vfs_file>/usr/gnat/lib/gcc/x86_64-pc-linux-gnu/4.9.4/rts-native/adainclude/s-osinte.ads</vfs_file>
+    </file_marker>
+    <file_marker column=" 42" line=" 86" >
+      <vfs_project />
+      <vfs_file>/usr/gnat/lib/gcc/x86_64-pc-linux-gnu/4.9.4/rts-native/adainclude/s-osinte.ads</vfs_file>
+    </file_marker>
+    <file_marker column=" 1" line=" 1" >
+      <vfs_project />
+      <vfs_file>/usr/gnat/lib/gcc/x86_64-pc-linux-gnu/4.9.4/rts-native/adainclude/s-linux.ads</vfs_file>
+    </file_marker>
+    <file_marker column=" 1" line=" 1" >
+      <vfs_project />
+      <vfs_file>/home/dan/projects/ada/ravenscar-sfp-sam3x-old/adainclude/s-interr.ads</vfs_file>
+    </file_marker>
+    <file_marker column=" 49" line=" 40" >
+      <vfs_project />
+      <vfs_file>/home/dan/projects/ada/ravenscar-sfp-sam3x-old/adainclude/s-interr.ads</vfs_file>
+    </file_marker>
+    <file_marker column=" 1" line=" 1" >
+      <vfs_project />
+      <vfs_file>/home/dan/projects/ada/ravenscar-sfp-sam3x-old/adainclude/s-taspri.ads</vfs_file>
+    </file_marker>
+    <file_marker column=" 79" line=" 22" >
+      <vfs_project />
+      <vfs_file>/home/dan/projects/ada/ravenscar-sfp-sam3x-old/adainclude/s-taspri.ads</vfs_file>
+    </file_marker>
+    <file_marker column=" 1" line=" 1" >
+      <vfs_project />
+      <vfs_file>/home/dan/projects/ada/ravenscar-sfp-sam3x-old/adainclude/s-stm32f.ads</vfs_file>
+    </file_marker>
+    <file_marker column=" 1" line=" 1" >
+      <vfs_project />
+      <vfs_file>/home/dan/projects/ada/ravenscar-sfp-sam3x-old/adainclude/s-interr.ads</vfs_file>
+    </file_marker>
+    <file_marker column=" 16" line=" 2368" >
+      <vfs_project />
+      <vfs_file>/home/dan/Downloads/gcc-3abfdf50c7d9a9bde74bb6753ab605f5cf48cad3/gcc/ada/sem_warn.adb</vfs_file>
+    </file_marker>
+    <file_marker column=" 28" line=" 483" >
+      <vfs_project />
+      <vfs_file>/home/dan/Downloads/gcc-3abfdf50c7d9a9bde74bb6753ab605f5cf48cad3/gcc/ada/rtsfind.adb</vfs_file>
+    </file_marker>
+    <file_marker column=" 30" line=" 415" >
+      <vfs_project />
+      <vfs_file>/home/dan/Downloads/gcc-3abfdf50c7d9a9bde74bb6753ab605f5cf48cad3/gcc/ada/opt.ads</vfs_file>
+    </file_marker>
+    <file_marker column=" 4" line=" 141" >
+      <vfs_project />
+      <vfs_file>/home/dan/Downloads/gcc-3abfdf50c7d9a9bde74bb6753ab605f5cf48cad3/gcc/ada/system-rtems.ads</vfs_file>
+    </file_marker>
+    <file_marker column=" 21" line=" 594" >
+      <vfs_project />
+      <vfs_file>/home/dan/Downloads/gcc-3abfdf50c7d9a9bde74bb6753ab605f5cf48cad3/gcc/ada/gnat1drv.adb</vfs_file>
+    </file_marker>
+    <file_marker column=" 59" line=" 125" >
+      <vfs_project />
+      <vfs_file>/home/dan/Downloads/gcc-3abfdf50c7d9a9bde74bb6753ab605f5cf48cad3/gcc/ada/targparm.ads</vfs_file>
+    </file_marker>
+    <file_marker column=" 43" line=" 117" >
+      <vfs_project />
+      <vfs_file>/home/dan/Downloads/gcc-3abfdf50c7d9a9bde74bb6753ab605f5cf48cad3/gcc/ada/s-rident.ads</vfs_file>
+    </file_marker>
+    <file_marker column=" 55" line=" 29" >
+      <vfs_project />
+      <vfs_file>/usr/gnat/lib/gcc/x86_64-pc-linux-gnu/4.9.4/rts-native/adainclude/a-interr.ads</vfs_file>
+    </file_marker>
+    <file_marker column=" 72" line=" 229" >
+      <vfs_project />
+      <vfs_file>/usr/gnat/lib/gcc/x86_64-pc-linux-gnu/4.9.4/rts-native/adainclude/s-interr.ads</vfs_file>
+    </file_marker>
+    <file_marker column=" 13" line=" 59" >
+      <vfs_project />
+      <vfs_file>/usr/gnat/lib/gcc/x86_64-pc-linux-gnu/4.9.4/rts-native/adainclude/a-intnam.ads</vfs_file>
+    </file_marker>
+    <file_marker column=" 42" line=" 86" >
+      <vfs_project />
+      <vfs_file>/usr/gnat/lib/gcc/x86_64-pc-linux-gnu/4.9.4/rts-native/adainclude/s-osinte.ads</vfs_file>
+    </file_marker>
+    <file_marker column=" 67" line=" 26" >
+      <vfs_project />
+      <vfs_file>/usr/gnat/lib/gcc/x86_64-pc-linux-gnu/4.9.4/rts-native/adainclude/s-linux.ads</vfs_file>
+    </file_marker>
+    <file_marker column=" 1" line=" 1" >
+      <vfs_project />
+      <vfs_file>/usr/gnat/lib/gcc/x86_64-pc-linux-gnu/4.9.4/rts-native/adainclude/s-interr.ads</vfs_file>
+    </file_marker>
+    <file_marker column=" 1" line=" 9" >
+      <vfs_project />
+      <vfs_file>/home/dan/projects/ada/dw1000/dw1000.gpr</vfs_file>
+    </file_marker>
+    <file_marker column=" 3" line=" 241" >
+      <vfs_project />
+      <vfs_file>/home/dan/projects/ada/dw1000/src/decadriver.ads</vfs_file>
+    </file_marker>
+    <file_marker column=" 35" line=" 777" >
+      <vfs_project />
+      <vfs_file>/home/dan/projects/ada/dw1000/src/dw1000-driver.adb</vfs_file>
+    </file_marker>
+    <file_marker column=" 44" line=" 34" >
+      <vfs_project />
+      <vfs_file>/home/dan/projects/ada/dw1000/src/dw1000-reception_quality.adb</vfs_file>
+    </file_marker>
+    <file_marker column=" 1" line=" 368" >
+      <vfs_project />
+      <vfs_file>/home/dan/projects/ada/dw1000/src/dw1000-driver.ads</vfs_file>
+    </file_marker>
+    <file_marker column=" 26" line=" 83" >
+      <vfs_project />
+      <vfs_file>/home/dan/projects/ada/dw1000/src/dw1000-system_time.ads</vfs_file>
+    </file_marker>
+    <file_marker column=" 37" line=" 76" >
+      <vfs_project />
+      <vfs_file>/home/dan/projects/ada/dw1000/src/dw1000-system_time.adb</vfs_file>
+    </file_marker>
+    <file_marker column=" 23" line=" 427" >
+      <vfs_project />
+      <vfs_file>/home/dan/projects/ada/dw1000/src/decadriver.ads</vfs_file>
+    </file_marker>
+    <file_marker column=" 1" line=" 432" >
+      <vfs_project />
+      <vfs_file>/home/dan/projects/ada/dw1000/src/decadriver.ads</vfs_file>
+    </file_marker>
+    <file_marker column=" 37" line=" 51" >
+      <vfs_project />
+      <vfs_file>/home/dan/projects/ada/evb1000/src/evb1000-led.ads</vfs_file>
+    </file_marker>
+    <file_marker column=" 26" line=" 78" >
+      <vfs_project />
+      <vfs_file>/home/dan/projects/ada/evb1000/src/evb1000-led.adb</vfs_file>
+    </file_marker>
+    <file_marker column=" 44" line=" 42" >
+      <vfs_project />
+      <vfs_file>/home/dan/projects/ada/evb1000/src/evb1000-led.ads</vfs_file>
+    </file_marker>
+    <file_marker column=" 1" line=" 1" >
+      <vfs_project />
+      <vfs_file>/home/dan/projects/ada/evb1000/src/evb1000-lcd.ads</vfs_file>
+    </file_marker>
+    <file_marker column=" 30" line=" 44" >
+      <vfs_project />
+      <vfs_file>/home/dan/projects/ada/evb1000/src/evb1000-lcd.ads</vfs_file>
+    </file_marker>
+    <file_marker column=" 1" line=" 1" >
+      <vfs_project />
+      <vfs_file>/home/dan/projects/ada/evb1000/src/evb1000-lcd.adb</vfs_file>
+    </file_marker>
+    <file_marker column=" 35" line=" 76" >
+      <vfs_project />
+      <vfs_file>/home/dan/projects/ada/evb1000/src/evb1000-lcd.adb</vfs_file>
+    </file_marker>
+    <file_marker column=" 1" line=" 1" >
+      <vfs_project />
+      <vfs_file>/home/dan/projects/ada/evb1000/src/evb1000-s1.adb</vfs_file>
+    </file_marker>
+    <file_marker column=" 16" line=" 24" >
+      <vfs_project />
+      <vfs_file>/home/dan/projects/ada/evb1000/src/evb1000-s1.adb</vfs_file>
+    </file_marker>
+    <file_marker column=" 1" line=" 1" >
+      <vfs_project />
+      <vfs_file>/home/dan/projects/ada/evb1000/src/evb1000-s1.ads</vfs_file>
+    </file_marker>
+    <file_marker column=" 1" line=" 1" >
+      <vfs_project />
+      <vfs_file>/home/dan/projects/ada/evb1000/src/evb1000-led.ads</vfs_file>
+    </file_marker>
+    <file_marker column=" 1" line=" 1" >
+      <vfs_project />
+      <vfs_file>/home/dan/projects/ada/evb1000/src/evb1000-led.adb</vfs_file>
+    </file_marker>
+    <file_marker column=" 33" line=" 80" >
+      <vfs_project />
+      <vfs_file>/home/dan/projects/ada/evb1000/src/evb1000-led.adb</vfs_file>
+    </file_marker>
+    <file_marker column=" 9" line=" 82" >
+      <vfs_project />
+      <vfs_file>/home/dan/projects/ada/evb1000/src/evb1000-led.adb</vfs_file>
+    </file_marker>
+    <file_marker column=" 9" line=" 82" >
+      <vfs_project />
+      <vfs_file>/home/dan/projects/ada/evb1000/src/evb1000-led.adb</vfs_file>
+    </file_marker>
+    <file_marker column=" 1" line=" 29" >
+      <vfs_project />
+      <vfs_file>/home/dan/projects/ada/evb1000/src/evb1000-led.adb</vfs_file>
+    </file_marker>
+    <file_marker column=" 9" line=" 82" >
+      <vfs_project />
+      <vfs_file>/home/dan/projects/ada/evb1000/src/evb1000-led.adb</vfs_file>
+    </file_marker>
+    <file_marker column=" 9" line=" 82" >
+      <vfs_project />
+      <vfs_file>/home/dan/projects/ada/evb1000/src/evb1000-led.adb</vfs_file>
+    </file_marker>
+    <file_marker column=" 9" line=" 82" >
+      <vfs_project />
+      <vfs_file>/home/dan/projects/ada/evb1000/src/evb1000-led.adb</vfs_file>
+    </file_marker>
+    <file_marker column=" 9" line=" 82" >
+      <vfs_project />
+      <vfs_file>/home/dan/projects/ada/evb1000/src/evb1000-led.adb</vfs_file>
+    </file_marker>
+    <file_marker column=" 9" line=" 82" >
+      <vfs_project />
+      <vfs_file>/home/dan/projects/ada/evb1000/src/evb1000-led.adb</vfs_file>
+    </file_marker>
+    <file_marker column=" 9" line=" 82" >
+      <vfs_project />
+      <vfs_file>/home/dan/projects/ada/evb1000/src/evb1000-led.adb</vfs_file>
+    </file_marker>
+    <file_marker column=" 9" line=" 82" >
+      <vfs_project />
+      <vfs_file>/home/dan/projects/ada/evb1000/src/evb1000-led.adb</vfs_file>
+    </file_marker>
+    <file_marker column=" 9" line=" 82" >
+      <vfs_project />
+      <vfs_file>/home/dan/projects/ada/evb1000/src/evb1000-led.adb</vfs_file>
+    </file_marker>
+    <file_marker column=" 9" line=" 82" >
+      <vfs_project />
+      <vfs_file>/home/dan/projects/ada/evb1000/src/evb1000-led.adb</vfs_file>
+    </file_marker>
+    <file_marker column=" 1" line=" 1" >
+      <vfs_project />
+      <vfs_file>/home/dan/projects/ada/evb1000/examples/usb_echo/usb_echo.gpr</vfs_file>
+    </file_marker>
+    <file_marker column=" 13" line=" 13" >
+      <vfs_project />
+      <vfs_file>/home/dan/projects/ada/evb1000/examples/usb_echo/usb_echo.adb</vfs_file>
+    </file_marker>
+    <file_marker column=" 48" line=" 12" >
+      <vfs_project />
+      <vfs_file>/home/dan/projects/ada/evb1000/examples/usb_echo/usb_echo.adb</vfs_file>
+    </file_marker>
+    <file_marker column=" 52" line=" 66" >
+      <vfs_project />
+      <vfs_file>/home/dan/projects/ada/evb1000/evb1000/adainclude/evb1000-usb.ads</vfs_file>
+    </file_marker>
+    <file_marker column=" 1" line=" 1" >
+      <vfs_project />
+      <vfs_file>/home/dan/projects/ada/evb1000/examples/usb_echo/usb_echo.gpr</vfs_file>
+    </file_marker>
+    <file_marker column=" 9" line=" 1" >
+      <vfs_project />
+      <vfs_file>/home/dan/projects/ada/evb1000/evb1000/evb1000.gpr</vfs_file>
+    </file_marker>
+    <file_marker column=" 1" line=" 1" >
+      <vfs_project />
+      <vfs_file>/home/dan/projects/ada/evb1000/examples/usb_echo/usb_echo.gpr</vfs_file>
+    </file_marker>
+    <file_marker column=" 1" line=" 1" >
+      <vfs_project />
+      <vfs_file>/home/dan/projects/ada/evb1000/examples/usb_echo/usb_echo.adb</vfs_file>
+    </file_marker>
+    <file_marker column=" 69" line=" 66" >
+      <vfs_project />
+      <vfs_file>/home/dan/projects/ada/evb1000/evb1000/adainclude/evb1000-usb.ads</vfs_file>
+    </file_marker>
+    <file_marker column=" 9" line=" 1" >
+      <vfs_project />
+      <vfs_file>/home/dan/projects/ada/evb1000/examples/usb_echo/usb_echo.gpr</vfs_file>
+    </file_marker>
+    <file_marker column=" 69" line=" 66" >
+      <vfs_project />
+      <vfs_file>/home/dan/projects/ada/evb1000/evb1000/adainclude/evb1000-usb.ads</vfs_file>
+    </file_marker>
+    <file_marker column=" 9" line=" 1" >
+      <vfs_project />
+      <vfs_file>/home/dan/projects/ada/evb1000/examples/usb_echo/usb_echo.gpr</vfs_file>
+    </file_marker>
+    <file_marker column=" 16" line=" 7" >
+      <vfs_project />
+      <vfs_file>/home/dan/projects/ada/evb1000/examples/usb_echo/usb_echo.gpr</vfs_file>
+    </file_marker>
+    <file_marker column=" 9" line=" 1" >
+      <vfs_project />
+      <vfs_file>/home/dan/projects/ada/evb1000/examples/usb_echo/usb_echo.gpr</vfs_file>
+    </file_marker>
+    <file_marker column=" 16" line=" 7" >
+      <vfs_project />
+      <vfs_file>/home/dan/projects/ada/evb1000/examples/usb_echo/usb_echo.gpr</vfs_file>
+    </file_marker>
+    <file_marker column=" 9" line=" 1" >
+      <vfs_project />
+      <vfs_file>/home/dan/projects/ada/evb1000/examples/usb_echo/usb_echo.gpr</vfs_file>
+    </file_marker>
+    <file_marker column=" 22" line=" 3" >
+      <vfs_project />
+      <vfs_file>/home/dan/projects/ada/evb1000/examples/usb_echo/usb_echo.gpr</vfs_file>
+    </file_marker>
+    <file_marker column=" 9" line=" 1" >
+      <vfs_project />
+      <vfs_file>/home/dan/projects/ada/evb1000/examples/usb_echo/usb_echo.gpr</vfs_file>
+    </file_marker>
+    <file_marker column=" 36" line=" 10" >
+      <vfs_project />
+      <vfs_file>/home/dan/projects/ada/evb1000/examples/usb_echo/usb_echo.gpr</vfs_file>
+    </file_marker>
+    <file_marker column=" 9" line=" 1" >
+      <vfs_project />
+      <vfs_file>/home/dan/projects/ada/evb1000/examples/usb_echo/usb_echo.gpr</vfs_file>
+    </file_marker>
+    <file_marker column=" 1" line=" 1" >
+      <vfs_project />
+      <vfs_file>/home/dan/projects/ada/evb1000/examples/usb_echo/usb_echo.gpr</vfs_file>
+    </file_marker>
+    <file_marker column=" 1" line=" 19" >
+      <vfs_project />
+      <vfs_file>/home/dan/projects/ada/evb1000/examples/usb_echo/usb_echo.gpr</vfs_file>
+    </file_marker>
+    <file_marker current="true" column=" 9" line=" 1" >
+      <vfs_project />
+      <vfs_file>/home/dan/projects/ada/evb1000/examples/usb_echo/usb_echo.gpr</vfs_file>
+    </file_marker>
+  </Project>
+</Locations>
